@@ -6,10 +6,6 @@ var longestCommonPrefix = function(strs) {
     let prefix = "";
     let Candidate = "";
     
-//     if (strs.length === 1) {
-//         return prefix;
-//     }
-    
     for (i = 0; i < strs[0].length; i++) {
         Candidate = strs[0].charAt(i);
         
