@@ -5,7 +5,6 @@
 var flipAndInvertImage = function(image) {
     let tempArr;
     for (let i = 0; i < image.length; i++) {
- 
         tempArr = [];
         
         for (let j = image[i].length - 1; j >= 0; j--) {
@@ -17,7 +16,6 @@ var flipAndInvertImage = function(image) {
         }
         
         image[i] = [...tempArr];
-        
     }
     
     return image;
