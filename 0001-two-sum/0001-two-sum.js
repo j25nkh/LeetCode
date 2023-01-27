@@ -4,10 +4,15 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        if (nums.includes(target - nums[i]) && (i !== nums.indexOf(target - nums[i]))) {
-            return [i, nums.indexOf(target - nums[i])];    
-        }
+  let cache = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    let remaining = target - nums[i];
+      
+    if (cache[nums[i]] !== undefined) {
+      return [cache[nums[i]], i];
     }
-    
-};
+
+    cache[remaining] = i;
+    }
+};  
