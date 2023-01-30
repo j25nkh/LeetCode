@@ -13,8 +13,9 @@ var balancedStringSplit = function(s) {
             counter++;
         }
         
-        if (counter === 0) result++;
-        
+        if (counter === 0) {
+            result++;
+        }
     }
     
     return result;
