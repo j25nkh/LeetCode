@@ -12,7 +12,7 @@
 
 ## 루틴 (1:30)
 
-- [알고리즘 풀이 현황](https://www.notion.so/jakejeon/bd73c8f06a5447afa1ea3f9e18a8fa77)
+- [알고리즘 풀이 현황](https://jakejeon.notion.site/bd73c8f06a5447afa1ea3f9e18a8fa77)
 - 1일 1시간 이상 할애:
   - 40분 문제해결
   - 20분 최적솔루션 학습
