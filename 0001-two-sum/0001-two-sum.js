@@ -34,6 +34,6 @@ var twoSum = function(nums, target) {
         obj[nums[i]] = i;
     }
 
-    return null;
+    // return null;
 };  
 
