@@ -6,12 +6,20 @@
 
 
 var twoSum = function(nums, target) {
-    if (nums.length === 2) return [0, 1];
+//     if (nums.length === 2) return [0, 1];
+    
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = i + 1; j < nums.length; j++) {
+//             if (nums[j] === target - nums[i]) return [i, j];
+//         }
+//     }
+    
+    const obj = {};
     
     for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[j] === target - nums[i]) return [i, j];
-        }
+        if ((target - nums[i]) in obj) return [obj[target - nums[i]], i];
+        
+        obj[nums[i]] = i;
     }
     
 };  
