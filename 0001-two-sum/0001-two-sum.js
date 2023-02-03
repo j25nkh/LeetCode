@@ -23,15 +23,15 @@ var twoSum = function(nums, target) {
 //     }
     
     
-    const dict= {};
+    const obj= {};
     
     for(let i = 0; i<nums.length; i++) {
-        const inp = nums[i];
-        const diff = target-inp;
+        // const inp = nums[i];
+        // const diff = target- nums[i];
         
-        if(diff in dict) return [dict[diff], i];
+        if (target- nums[i] in obj) return [obj[target- nums[i]], i];
 
-        dict[inp] = i;
+        obj[nums[i]] = i;
     }
 
     return null;
