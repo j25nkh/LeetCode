@@ -8,13 +8,9 @@
 var twoSum = function(nums, target) {
     if (nums.length === 2) return [0, 1];
     
-    // nums.sort((a, b) => a - b);
-    
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
             if (nums[j] === target - nums[i]) return [i, j];
-            
-            // if (nums[j] > target - nums[i]) break;
         }
     }
     
