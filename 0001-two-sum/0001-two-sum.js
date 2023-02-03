@@ -14,26 +14,13 @@ var twoSum = function(nums, target) {
 //         }
 //     }
     
-//     const obj = {};
+    const obj = {};
     
-//     for (let i = 0; i < nums.length; i++) {
-//         if ((target - nums[i]) in obj) return [obj[target - nums[i]], i];
+    for (let i = 0; i < nums.length; i++) {
+        if ((target - nums[i]) in obj) return [obj[target - nums[i]], i];
         
-//         obj[nums[i]] = i;
-//     }
-    
-    
-    const obj= {};
-    
-    for(let i = 0; i<nums.length; i++) {
-        // const inp = nums[i];
-        // const diff = target- nums[i];
-        
-        if (target- nums[i] in obj) return [obj[target- nums[i]], i];
-
         obj[nums[i]] = i;
     }
 
-    // return null;
 };  
 
