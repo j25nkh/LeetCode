@@ -3,33 +3,22 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    let arr = [];
+    let str = s[0];
     
-    for (i = 0; i < s.length; i++) {
-        if (s.charAt(i) === '(') {
-            arr.push('s')
-        } else if (s.charAt(i) === '{') {
-            arr.push('m')
-        } else if (s.charAt(i) === '[') {
-            arr.push('l')
-        } else if (s.charAt(i) === ')') {
-            if (arr.pop() !== 's') {
-                return false
-            }
-        } else if (s.charAt(i) === '}') {
-            if (arr.pop() !== 'm') {
-                return false
-            }
-        } else if (s.charAt(i) === ']') {
-            if (arr.pop() !== 'l') {
-                return false
-            }
+    for (let i = 1; i < s.length; i++) {
+        if (
+            (str[str.length - 1] === '(' && s[i] === ')')
+            || (str[str.length - 1] === '{' && s[i] === '}')
+            || (str[str.length - 1] === '[' && s[i]  === ']')
+        ) {
+            str = str.slice(0, -1);
+        } else {
+            str = str + s[i];
         }
     }
     
-    if (arr.length === 0) {
-        return true;    
-    }
+    if (str === "") return true;
     
-    return false;    
+    return false;
+    
 };
