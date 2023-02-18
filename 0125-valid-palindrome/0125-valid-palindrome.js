@@ -3,20 +3,13 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    const str = s.toLowerCase();
-    let forwardS = "";
-    let backwardS = "";
-    
-    for (let j = 0; j < str.length; j++) {
-        if (str[j].match(/^[a-z0-9]*$/)) {
-            forwardS = forwardS + str[j];
-            backwardS = str[j] + backwardS;
+    let forwardS = s.toLowerCase().replace(/[^a-zA-Z0-9]+/g, "");
+
+    for (let i = 0; i < forwardS.length; i++) {
+        if (forwardS[i] !== forwardS[forwardS.length - 1 - i]) {
+            return false;
         }
     }
 
-    if (forwardS === backwardS) {
-        return true;
-    }
-    
-    return false;
+    return true;
 };
