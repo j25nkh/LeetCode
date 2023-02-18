@@ -2,20 +2,47 @@
  * @param {string} s
  * @return {boolean}
  */
-var isPalindrome = function(s) {
+var isPalindrome = function(input) {
+    var start = 0
+    var end = input.length - 1
+    while (start < end) {
+        var s = input.charCodeAt(start)
+        var e = input.charCodeAt(end)
     
-    // turn string to lowercase and use regex to remove non-alphanumeric
-    s = s.toLowerCase();
-    s = s.replace(/[^A-Za-z0-9]/g, '');
-
-    let start = 0;
-    let end = s.length-1; 
+        if (!isLetter(s)) {
+            start++
+            continue
+        }
+        if (!isLetter(e)) {
+            end--
+            continue
+        }
     
-    while (start < end){
-        
-        if(s[start] !== s[end]) return false
-        start++;
-        end--;
-    }
-    return true
+        if (toLowerCase(s) !== toLowerCase(e)) {
+            return false 
+        } 
+        start++
+        end--
+  }
+  return true
 };
+
+var isLetter = function(code) {
+    if (((code >= 48) && (code <= 57))  // numbers
+    || ((code >= 65) && (code <= 90))  // uppercase
+    || ((code >= 97) && (code <= 122))) {  // lowercase
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+var toLowerCase = function(code) {
+    if (code >= 65 && code <= 90) {
+        return code + 32    
+    }
+    else {
+        return code
+    }
+}
