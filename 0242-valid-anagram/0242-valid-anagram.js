@@ -4,12 +4,32 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    const tCopy = t.split("").sort().join("");
-    const sCopy = s.split("").sort().join("");
+    if (s.length !== t.length) {
+        return false;
+    }
     
-    if (sCopy === tCopy) {
-        return true;
-    } 
+    const ss = {};
+    const tt = {};
     
-    return false;
+    for (let i = 0; i < s.length; i++) {
+        if (!ss[s[i]]) {
+            ss[s[i]] = 1;
+        } else {
+            ss[s[i]]++;
+        }
+        
+        if (!tt[t[i]]) {
+            tt[t[i]] = 1;
+        } else {
+            tt[t[i]]++;
+        }
+    }
+  
+  for (const char in ss) {
+    if (ss[char] !== tt[char]) {
+      return false;
+    }
+  }
+    
+  return true;
 };
