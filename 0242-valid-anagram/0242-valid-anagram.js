@@ -8,25 +8,25 @@ var isAnagram = function(s, t) {
         return false;
     }
     
-    const ss = {};
-    const tt = {};
+    const result = {};
+    
     
     for (let i = 0; i < s.length; i++) {
-        if (!ss[s[i]]) {
-            ss[s[i]] = 1;
+        if (!result[s[i]]) {
+            result[s[i]] = 1;
         } else {
-            ss[s[i]]++;
+            result[s[i]]++;
         }
         
-        if (!tt[t[i]]) {
-            tt[t[i]] = 1;
+        if (!result[t[i]]) {
+            result[t[i]] = -1;
         } else {
-            tt[t[i]]++;
+            result[t[i]]--;
         }
     }
   
-  for (const char in ss) {
-    if (ss[char] !== tt[char]) {
+  for (const char in result) {
+    if (result[char] !== 0) {
       return false;
     }
   }
