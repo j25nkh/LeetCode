@@ -9,19 +9,18 @@ var isAnagram = function(s, t) {
     }
     
     const result = {};
-    
-    
+        
     for (let i = 0; i < s.length; i++) {
-        if (!result[s[i]]) {
-            result[s[i]] = 1;
-        } else {
+        if (result[s[i]]) {
             result[s[i]]++;
+        } else {
+            result[s[i]] = 1;
         }
         
-        if (!result[t[i]]) {
-            result[t[i]] = -1;
-        } else {
+        if (result[t[i]]) {
             result[t[i]]--;
+        } else {
+            result[t[i]] = -1;
         }
     }
   
